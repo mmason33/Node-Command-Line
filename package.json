@@ -1,0 +1,35 @@
+{
+  "name": "nodejs-boilerplate",
+  "version": "0.0.0",
+  "description": "NodeJS Boilerplate",
+  "author": "@filipesf",
+  "license": "MIT",
+  "dependencies": {
+    "cssmin": "latest",
+    "del-cli": "latest",
+    "glob": "latest",
+    "imagemin-cli": "latest",
+    "minifier": "latest",
+    "node-sass": "latest",
+    "node-spotify-api": "^1.0.7",
+    "npm-run-all": "latest",
+    "sassdoc": "latest",
+    "twitter": "^1.7.1",
+    "watch": "latest"
+  },
+  "scripts": {
+    "start": "npm-run-all -s clear watch",
+    "clear": "del build/*",
+    "build:js": "del build/js/**/* && cp -R source/scripts/ build/js/",
+    "build:css": "del build/css/**/* && node-sass source/styles --output build/css --output-style nested && npm run prefix:css",
+    "build:docs": "del build/docs/**/* && sassdoc source/styles --dest build/docs",
+    "build:img": "del build/img/**/* && imagemin source/images/* --out-dir build/img && imagemin source/images/icons/* --out-dir build/img/icons",
+    "build": "npm-run-all -s clear build:js build:css minify build:docs build:img",
+    "minify": "minify build/js/ && minify build/css/",
+    "watch:js": "watch 'npm run build:js' source/scripts",
+    "watch:css": "watch 'npm run build:css' source/styles",
+    "watch:docs": "watch 'npm run build:docs' source/styles",
+    "watch:img": "watch 'npm run build:img' source/images",
+    "watch": "npm-run-all -p watch:*"
+  }
+}
