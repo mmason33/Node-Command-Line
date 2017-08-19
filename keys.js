@@ -1,5 +1,3 @@
-console.log('this is loaded');
-
 exports.twitterKeys = {
   consumer_key: 'R1igIzdBkkSSIEIXbNRsb6EFY',
   consumer_secret: 'rtDdeJpHQgWYCqtZrZbhW0FFb7ZLRy6KmIvrYE6kWunMWY315A',
@@ -7,7 +5,20 @@ exports.twitterKeys = {
   access_token_secret: 'bOAYOfn7EWNQ29P4pThyrKuBpGKTNC2rimRiH7egyBPzR',
 }
 
+exports.spotifyKey = {
+  client_id: '008f6a80097a4a5a8f04934c9dc9aa99',
+  client_secret: '5097df14360f4856b0a9aa8febbfc9f3',
+}
 
+exports.omdbKey = '40e9cece';
+
+
+//omdb
+//40e9cece
+
+//spotify
+//Client ID 008f6a80097a4a5a8f04934c9dc9aa99
+//Client Secret 5097df14360f4856b0a9aa8febbfc9f3
 
 // Consumer Key (API Key)	R1igIzdBkkSSIEIXbNRsb6EFY
 // Consumer Secret (API Secret)	rtDdeJpHQgWYCqtZrZbhW0FFb7ZLRy6KmIvrYE6kWunMWY315A
